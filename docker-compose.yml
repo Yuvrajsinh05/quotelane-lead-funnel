@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: quotelane
+      POSTGRES_PASSWORD: quotelane
+      POSTGRES_DB: quotelane
+    ports:
+      - "54329:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    command: >
+      sh -c "docker-entrypoint.sh postgres &
+             until pg_isready -U quotelane; do sleep 1; done;
+             psql -U quotelane -tc \"SELECT 1 FROM pg_database WHERE datname='quotelane_test'\" | grep -q 1 ||
+             psql -U quotelane -c 'CREATE DATABASE quotelane_test';
+             wait"
+volumes:
+  pgdata:

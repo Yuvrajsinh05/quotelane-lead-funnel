@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d9eaff;
+  --color-brand-500: #2563eb;
+  --color-brand-600: #1d4ed8;
+  --color-brand-700: #1e40af;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #f8fafc;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Large, thumb-friendly controls; 16px inputs stop iOS from zooming on focus. */
+input,
+select {
+  font-size: 16px;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-4 focus-visible:ring-brand-100 focus-visible:ring-offset-0;
+}

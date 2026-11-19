@@ -2,7 +2,8 @@
 
 A Next.js 16 + TypeScript + Postgres lead funnel: landing page, multi-step form (A/B split), affiliate tracking, URL prefill, a lead-capture API, and partner delivery through a transactional outbox.
 
-- **Live:** `<DEPLOYED_URL>`
+- **Live:** https://quotelane-lead-funnel.vercel.app
+- **Try a prefilled affiliate link:** https://quotelane-lead-funnel.vercel.app/?click_id=abc123&aff_id=42&channel=email&zip=90210&first_name=Sam&email=sam%40example.com&insured=yes&year={sub5}
 - **Architecture, with diagrams:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - **Tests:** 103 unit, 30 integration (real Postgres), 4 end-to-end (real browser, mobile viewport)
 
